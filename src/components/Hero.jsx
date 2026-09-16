@@ -14,7 +14,7 @@ const Hero3DCanvas = dynamic(() => import("@/components/Hero3DCanvas"), {
 });
 
 export default function Hero({
-  name = "Samarth Santosh Madaleabc",
+  name = "Samarth Santosh Madale",
   aboutText = "M.Tech Computer Science and Engineering student at Walchand College of Engineering, Sangli. Specializing in full-stack development, AI/Computer Vision, high-performance computing, and data analytics. I build robust applications and design data pipelines to translate complex datasets into actionable business insights.",
   resumeUrl = "/resume.pdf",
 }) {
