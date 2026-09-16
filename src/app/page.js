@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -11,17 +10,11 @@ import TracingBeam from "@/components/TracingBeam";
 import TextReveal from "@/components/TextReveal";
 import MaskedHeader from "@/components/MaskedHeader";
 import SpotlightCard from "@/components/SpotlightCard";
-import CinematicPreloader from "@/components/CinematicPreloader";
 import { GraduationCap } from "lucide-react";
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   return (
     <div className="flex flex-col min-h-screen bg-transparent text-zinc-900 dark:text-zinc-100 transition-colors duration-300 relative z-10 overflow-x-clip">
-      {/* Cinematic Full-Screen Initial Visit Preloader */}
-      <CinematicPreloader onComplete={() => setIsLoaded(true)} />
-
       {/* Sticky Responsive Header with Theme Toggle */}
       <Navbar />
 
@@ -29,16 +22,13 @@ export default function Home() {
       <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 md:px-8">
         <TracingBeam>
           {/* Hero Section with 3D Canvas, Typewriter, Tilt */}
-          <Hero isLoaded={isLoaded} />
-
-          {/* Projects Section with Bento Grid */}
-          <Projects />
+          <Hero />
 
           {/* About Section with Frosted Glass Education Cards */}
           <section id="about" className="py-24 sm:py-32 border-b border-zinc-200/80 dark:border-zinc-800/80">
             <div className="flex items-center gap-3 mb-12">
               <TextReveal
-                text="02 // About"
+                text="01 // About"
                 as="span"
                 className="text-xs font-mono tracking-widest text-cyan-500 dark:text-cyan-400 uppercase"
               />
@@ -54,10 +44,10 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7 space-y-6 text-zinc-700 dark:text-zinc-300 text-base sm:text-lg leading-relaxed font-normal">
                 <p>
-                  Currently pursuing an M.Tech in Computer Science and Engineering at Walchand College of Engineering, Sangli. My engineering philosophy centers on architectural rigor, whether architecting scalable web applications, parallel computing pipelines with CUDA, or conducting research in deep learning vision systems.
+                  M.Tech Computer Science and Engineering student at Walchand College of Engineering, Sangli. Specializing in full-stack development, AI/Computer Vision, high-performance computing, and data analytics.
                 </p>
                 <p className="text-zinc-600 dark:text-zinc-400 text-base">
-                  From real-time algorithm visualization tools to healthcare analytics dashboards processing tens of thousands of records, I focus on turning algorithmic complexity into intuitive user experiences and strategic data insights.
+                  I build robust applications and design data pipelines to translate complex datasets into actionable business insights.
                 </p>
               </div>
 
@@ -105,6 +95,9 @@ export default function Home() {
               </div>
             </div>
           </section>
+
+          {/* Projects Section */}
+          <Projects />
 
           {/* Research & Publications Section */}
           <Research />

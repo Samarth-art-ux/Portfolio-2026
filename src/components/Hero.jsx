@@ -14,9 +14,8 @@ const Hero3DCanvas = dynamic(() => import("@/components/Hero3DCanvas"), {
 });
 
 export default function Hero({
-  isLoaded = true,
   name = "Samarth Santosh Madale",
-  aboutText = "Final year M.Tech CSE student at Walchand College of Engineering, with strong interests in Computer Vision, Applied AI, and High-Performance Parallel Computing.",
+  aboutText = "M.Tech Computer Science and Engineering student at Walchand College of Engineering, Sangli. Specializing in full-stack development, AI/Computer Vision, high-performance computing, and data analytics. I build robust applications and design data pipelines to translate complex datasets into actionable business insights.",
   resumeUrl = "/resume.pdf",
 }) {
   const [downloaded, setDownloaded] = useState(false);
@@ -59,8 +58,8 @@ export default function Hero({
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 25 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="relative pt-20 pb-24 md:pt-28 md:pb-36 border-b border-zinc-200/80 dark:border-zinc-800/80 overflow-hidden will-change-transform will-change-opacity transform-gpu"
     >
@@ -77,7 +76,7 @@ export default function Hero({
         {/* Left / Main Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-7 flex flex-col items-start will-change-transform will-change-opacity transform-gpu"
         >
@@ -101,9 +100,10 @@ export default function Hero({
               <Typewriter
                 options={{
                   strings: [
-                    "Computer Vision Researcher",
-                    "High-Performance Computing Enthusiast",
+                    "Full-Stack Developer",
                     "Data Analyst",
+                    "AI & Computer Vision",
+                    "High-Performance Computing",
                   ],
                   autoStart: true,
                   loop: true,
@@ -161,7 +161,7 @@ export default function Hero({
         {/* Right / Profile Photo with 3D Parallax Tilt */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
-          animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-5 flex justify-center lg:justify-end w-full will-change-transform will-change-opacity transform-gpu"
         >

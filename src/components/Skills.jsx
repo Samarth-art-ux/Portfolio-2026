@@ -18,63 +18,31 @@ export const SKILL_CATEGORIES = [
     id: "data-analytics",
     category: "Data Analytics & Databases",
     icon: Database,
-    description: "Data modeling, ETL architectures, and business intelligence reporting",
-    skills: [
-      { name: "Power BI", level: "Advanced" },
-      { name: "SQL", level: "Advanced" },
-      { name: "Data Visualization", level: "Core" },
-      { name: "Database Architecture", level: "Core" },
-      { name: "ETL Pipelines", level: "Core" },
-    ],
+    skills: ["Power BI", "SQL", "Data Visualization", "Database Architecture", "ETL Pipelines"],
   },
   {
     id: "languages-web",
     category: "Languages & Web",
     icon: Code2,
-    description: "Modern full-stack application engineering and frameworks",
-    skills: [
-      { name: "JavaScript", level: "Primary" },
-      { name: "Python", level: "Primary" },
-      { name: "C#", level: "Primary" },
-      { name: "ASP.NET", level: "Core" },
-      { name: "Next.js", level: "Core" },
-      { name: "HTML/CSS", level: "Core" },
-    ],
+    skills: ["JavaScript", "Python", "C#", "ASP.NET", "Next.js", "HTML/CSS"],
   },
   {
     id: "ai-ml",
     category: "AI & Machine Learning",
     icon: Cpu,
-    description: "Deep neural networks, computer vision, and cognitive computing",
-    skills: [
-      { name: "Deep Learning", level: "Research" },
-      { name: "Convolutional Neural Networks (LeNet-5, YOLO)", level: "Research" },
-      { name: "Soft Computing", level: "Core" },
-    ],
+    skills: ["Deep Learning", "Convolutional Neural Networks (LeNet-5, YOLO)", "Soft Computing"],
   },
   {
     id: "hpc-core",
     category: "High-Performance & Core Tech",
     icon: Layers,
-    description: "Parallel computing acceleration, graphics pipelines, and spatial engines",
-    skills: [
-      { name: "CUDA GPU Programming (Parallel computing)", level: "HPC" },
-      { name: "Unity 3D", level: "Spatial" },
-      { name: "Vuforia Engine SDK", level: "AR/Vision" },
-    ],
+    skills: ["CUDA GPU Programming (Parallel computing)", "Unity 3D", "Vuforia Engine SDK"],
   },
   {
     id: "tools",
     category: "Tools",
     icon: Wrench,
-    description: "Development environments, version control, and academic typesetting",
-    skills: [
-      { name: "Firebase", level: "Cloud" },
-      { name: "Git/GitHub", level: "VCS" },
-      { name: "LaTeX", level: "Academic" },
-      { name: "TikZ", level: "Graphics" },
-      { name: "Visual Studio 2022", level: "IDE" },
-    ],
+    skills: ["Firebase", "Git/GitHub", "LaTeX", "TikZ", "Visual Studio 2022"],
   },
 ];
 
@@ -91,7 +59,7 @@ export default function Skills({ categories = SKILL_CATEGORIES }) {
       >
         <div className="flex items-center gap-3 mb-6">
           <TextReveal
-            text="04 // Arsenal"
+            text="04 // Technical Arsenal"
             as="span"
             className="text-xs font-mono tracking-widest text-purple-500 dark:text-purple-400 uppercase"
           />
@@ -106,7 +74,7 @@ export default function Skills({ categories = SKILL_CATEGORIES }) {
               className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white cursor-default"
             />
             <p className="mt-3 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl font-normal">
-              A comprehensive, structured inventory of core technologies, systems programming paradigms, data tools, and neural architectures.
+              Technical skillset spanning data analytics, full-stack engineering, AI/ML models, parallel computing, and development tools.
             </p>
           </div>
         </div>
@@ -138,7 +106,7 @@ export default function Skills({ categories = SKILL_CATEGORIES }) {
             >
               <div>
                 {/* Category Header with Icon */}
-                <div className="flex items-center gap-3.5 mb-4">
+                <div className="flex items-center gap-3.5 mb-6">
                   <div className="p-2.5 rounded-2xl bg-white/60 dark:bg-zinc-800/60 border border-white/30 dark:border-white/10 text-zinc-700 dark:text-zinc-300 group-hover:text-cyan-400 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all">
                     <Icon className="w-5 h-5" />
                   </div>
@@ -149,21 +117,16 @@ export default function Skills({ categories = SKILL_CATEGORIES }) {
                   </div>
                 </div>
 
-                {/* Subtitle / Focus description */}
-                <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-6 font-mono leading-relaxed">
-                  {cat.description}
-                </p>
-
                 {/* Technologies List with Badges */}
                 <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skill, sIdx) => (
+                  {cat.skills.map((skillName, sIdx) => (
                     <motion.span
                       key={sIdx}
-                      whileHover={{ scale: 1.06 }}
+                      whileHover={{ scale: 1.05 }}
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium bg-white/60 dark:bg-zinc-800/60 text-zinc-800 dark:text-zinc-200 border border-white/30 dark:border-white/10 hover:border-purple-400/50 hover:shadow-[0_0_10px_rgba(168,85,247,0.25)] cursor-default transition-all duration-150"
                     >
                       <Check className="w-3 h-3 text-cyan-500 dark:text-cyan-400" />
-                      <span>{skill.name}</span>
+                      <span>{skillName}</span>
                     </motion.span>
                   ))}
                 </div>

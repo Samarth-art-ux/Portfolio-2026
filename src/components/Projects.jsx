@@ -11,7 +11,6 @@ export const PROJECTS_DATA = [
     id: "smart-maze-solver",
     title: "Smart Maze Solver",
     subtitle: "Real-Time Algorithm Visualizer",
-    category: "Full-Stack & Algorithms",
     tech: ["Python", "FastAPI", "JavaScript", "Graph Algorithms"],
     details:
       "Engineered a full-stack web application visualizing pathfinding algorithms in real-time, utilizing a high-performance Python backend for graph processing and a dynamic JavaScript frontend.",
@@ -20,7 +19,6 @@ export const PROJECTS_DATA = [
     id: "alumni-sphere",
     title: "Alumni Sphere",
     subtitle: "Professional Networking Platform",
-    category: "Web Platform",
     tech: ["ASP.NET", "Firebase", "Database Management", "UI/UX Design"],
     details:
       "Architected a comprehensive networking portal bridging students and alumni to facilitate mentorship. Implemented a robust database architecture for real-time data management and user authentication.",
@@ -28,8 +26,6 @@ export const PROJECTS_DATA = [
   {
     id: "healthcare-operations",
     title: "Healthcare Operations & Threat Monitoring Dashboard",
-    subtitle: "Cybersecurity & Hospital KPI Analytics",
-    category: "Data Analytics",
     tech: ["SQL", "Power BI", "Data Modeling", "Cybersecurity Analytics"],
     details:
       "Engineered an analytics dashboard mapping hospital resource utilization and network security incidents. Processed 50,000+ records using SQL CTEs and Window Functions, designing an interactive Power BI interface with risk heatmaps and real-time operational KPIs.",
@@ -37,8 +33,6 @@ export const PROJECTS_DATA = [
   {
     id: "alumni-placement",
     title: "Alumni Placement & Trajectory Analytics",
-    subtitle: "End-to-End ETL Data Pipeline",
-    category: "ETL & Visualization",
     tech: ["Power BI", "SQL Server", "ETL Pipeline", "Data Visualization"],
     details:
       "Developed an end-to-end data pipeline to analyze university graduate career progressions. Executed complex SQL joins and data normalization techniques to clean employment records, visualizing the outcomes via Sankey diagrams and skill-demand correlations.",
@@ -62,7 +56,7 @@ export default function Projects({ projects = PROJECTS_DATA }) {
       >
         <div className="flex items-center gap-3 mb-6">
           <TextReveal
-            text="01 // Projects"
+            text="02 // Projects"
             as="span"
             className="text-xs font-mono tracking-widest text-cyan-500 dark:text-cyan-400 uppercase"
           />
@@ -102,10 +96,9 @@ export default function Projects({ projects = PROJECTS_DATA }) {
             <div className="pointer-events-none absolute -top-16 -right-16 w-52 h-52 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" />
 
             <div className="flex-1 flex flex-col">
-              {/* Category & Status */}
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-mono tracking-wider uppercase text-purple-600 dark:text-purple-300 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm">
-                  {mazeProject.category}
+                  Full-Stack
                 </span>
                 <div className="p-2 rounded-full bg-white/60 dark:bg-zinc-800/60 border border-white/20 dark:border-white/10 text-zinc-500 dark:text-zinc-400 group-hover:text-purple-400 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all">
                   <ArrowUpRight className="w-4 h-4" />
@@ -115,21 +108,14 @@ export default function Projects({ projects = PROJECTS_DATA }) {
               <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                 {mazeProject.title}
               </h3>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
-                {mazeProject.subtitle}
-              </p>
-
-              {/* Architecture Badge */}
-              <div className="p-3.5 mb-4 rounded-xl border border-white/20 dark:border-white/10 bg-zinc-950/70 text-xs font-mono text-zinc-300 flex items-center justify-between">
-                <span className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
-                  Real-Time Algorithm Engine
-                </span>
-                <span className="text-purple-400">FastAPI • Python</span>
-              </div>
+              {mazeProject.subtitle && (
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
+                  {mazeProject.subtitle}
+                </p>
+              )}
 
               {/* Tech Stack Pills */}
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {mazeProject.tech.map((t, idx) => (
                   <span
                     key={idx}
@@ -167,7 +153,7 @@ export default function Projects({ projects = PROJECTS_DATA }) {
             <div className="flex-1 flex flex-col">
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-mono tracking-wider uppercase text-cyan-600 dark:text-cyan-300 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm">
-                  {alumniSphere.category}
+                  Web Application
                 </span>
                 <div className="p-2 rounded-full bg-white/60 dark:bg-zinc-800/60 border border-white/20 dark:border-white/10 text-zinc-500 dark:text-zinc-400 group-hover:text-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all">
                   <ArrowUpRight className="w-4 h-4" />
@@ -177,17 +163,13 @@ export default function Projects({ projects = PROJECTS_DATA }) {
               <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                 {alumniSphere.title}
               </h3>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
-                {alumniSphere.subtitle}
-              </p>
+              {alumniSphere.subtitle && (
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
+                  {alumniSphere.subtitle}
+                </p>
+              )}
 
-              {/* Portal Architecture Badge */}
-              <div className="p-3.5 mb-4 rounded-xl border border-white/20 dark:border-white/10 bg-zinc-950/70 text-xs font-mono text-zinc-300 flex items-center gap-3">
-                <Network className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Mentorship Mesh &amp; Firebase Auth Sync</span>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {alumniSphere.tech.map((t, idx) => (
                   <span
                     key={idx}
@@ -224,7 +206,7 @@ export default function Projects({ projects = PROJECTS_DATA }) {
             <div className="flex-1 flex flex-col">
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-mono tracking-wider uppercase text-purple-600 dark:text-purple-300 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm">
-                  {healthcare.category}
+                  Data Analytics
                 </span>
                 <div className="p-2 rounded-full bg-white/60 dark:bg-zinc-800/60 border border-white/20 dark:border-white/10 text-zinc-500 dark:text-zinc-400 group-hover:text-purple-400 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all">
                   <ArrowUpRight className="w-4 h-4" />
@@ -234,19 +216,13 @@ export default function Projects({ projects = PROJECTS_DATA }) {
               <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-300 transition-colors">
                 {healthcare.title}
               </h3>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
-                {healthcare.subtitle}
-              </p>
+              {healthcare.subtitle && (
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
+                  {healthcare.subtitle}
+                </p>
+              )}
 
-              <div className="p-3.5 mb-4 rounded-xl border border-white/20 dark:border-white/10 bg-zinc-950/70 text-xs font-mono text-zinc-300 flex items-center justify-between">
-                <span className="flex items-center gap-2">
-                  <ShieldAlert className="w-4 h-4 text-purple-400 shrink-0" />
-                  50,000+ Records Analyzed
-                </span>
-                <span className="text-emerald-400">CTEs • Window Func</span>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {healthcare.tech.map((t, idx) => (
                   <span
                     key={idx}
@@ -283,7 +259,7 @@ export default function Projects({ projects = PROJECTS_DATA }) {
             <div className="flex-1 flex flex-col">
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-mono tracking-wider uppercase text-cyan-600 dark:text-cyan-300 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-sm">
-                  {alumniPlacement.category}
+                  Data Pipeline &amp; Analytics
                 </span>
                 <div className="p-2 rounded-full bg-white/60 dark:bg-zinc-800/60 border border-white/20 dark:border-white/10 text-zinc-500 dark:text-zinc-400 group-hover:text-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all">
                   <ArrowUpRight className="w-4 h-4" />
@@ -293,19 +269,13 @@ export default function Projects({ projects = PROJECTS_DATA }) {
               <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                 {alumniPlacement.title}
               </h3>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
-                {alumniPlacement.subtitle}
-              </p>
+              {alumniPlacement.subtitle && (
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 font-mono mt-1 mb-4">
+                  {alumniPlacement.subtitle}
+                </p>
+              )}
 
-              <div className="p-3.5 mb-4 rounded-xl border border-white/20 dark:border-white/10 bg-zinc-950/70 text-xs font-mono text-zinc-300 flex items-center justify-between">
-                <span className="flex items-center gap-2">
-                  <GitMerge className="w-4 h-4 text-cyan-400 shrink-0" />
-                  Sankey Career Trajectory
-                </span>
-                <span className="text-cyan-400">Power BI ETL Pipeline</span>
-              </div>
-
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 mb-5">
                 {alumniPlacement.tech.map((t, idx) => (
                   <span
                     key={idx}
